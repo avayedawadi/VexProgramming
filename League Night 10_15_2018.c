@@ -352,26 +352,34 @@ task usercontrol()
 
 		if(vexRT[Btn6D] == 1)
 		{
-			while(SensorValue[flipSelector] < 1390)
-			{
-				motor[flipMotor] = 127;
-			}
-			while(SensorValue[flipSelector] > 1390)
-			{
-				motor[flipMotor] = 0;
-			}
+			//while(SensorValue[flipSelector] < 1390)
+			//{
+				//motor[flipMotor] = 127;
+			//}
+			//while(SensorValue[flipSelector] > 1390)
+			//{
+				//motor[flipMotor] = 0;
+			//}
+			motor[flipMotor] = 127;
+			waitUntil(SensorValue[flipSelector] > 1390);
+			motor[flipMotor] = 0;
 		}
 		if(vexRT[Btn6U] == 1)
 		{
-			while(SensorValue[flipSelector] > 1)
+			/*while(SensorValue[flipSelector] > 20)
 			{
 				motor[flipMotor] = -127;
 			}
 			while(SensorValue[flipSelector] < 1)
 			{
 				motor[flipMotor] = 0;
-			}
+			}*/
+			motor[flipMotor] = -127;
+			waitUntil(SensorValue[flipSelector] < 10);
+			motor[flipMotor] = 0;
 		}
+
+
 		//while(vexRT[Btn5D] == 0)
 		//{
 		//motor[flipMotor] = 0;
